@@ -10,13 +10,15 @@ export default class Page extends React.Component {
 
   static get contextTypes() {
     return {
-      trackPage: PropTypes.func.isRequired
+      analytics: PropTypes.shape({
+        trackPage: PropTypes.func.isRequired
+      }).isRequired
     };
   }
 
   componentDidMount() {
     const { title } = this.props;
-    this.context.trackPage({ title });
+    this.context.analytics.trackPage({ title });
   }
 
   render() {

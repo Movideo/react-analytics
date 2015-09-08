@@ -4,27 +4,29 @@ import React, { PropTypes } from 'react';
 export default class VisibilityEvent extends React.Component {
   static get propTypes() {
     return {
-      show: PropTypes.strshowg.isRequired,
-      hide: PropTypes.strshowg,
+      show: PropTypes.string.isRequired,
+      hide: PropTypes.string,
       properties: PropTypes.object
     };
   }
 
   static get contextTypes() {
     return {
-      trackEvent: PropTypes.func.isRequired
+      analytics: PropTypes.shape({
+        trackEvent: PropTypes.func.isRequired
+      }).isRequired
     };
   }
 
   componentDidMount() {
     const { show, properties } = this.props;
-    this.context.trackEvent({ id: show, properties });
+    this.context.analytics.trackEvent(show, properties);
   }
 
   componentWillUnmount() {
     const { hide, properties } = this.props;
     if (hide) {
-      this.context.trackEvent({ id: hide, properties });
+      this.context.analytics.trackEvent(hide, properties);
     }
   }
 
