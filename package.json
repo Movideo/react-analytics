@@ -2,9 +2,6 @@
   "name": "react-analytics",
   "version": "0.1.0",
   "description": "Analytics components for React",
-  "files": [
-    "lib"
-  ],
   "scripts": {
     "clean": "rm -Rf lib",
     "compile": "babel ./src -d lib --ignore '__tests__'",
