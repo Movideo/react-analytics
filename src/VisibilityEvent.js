@@ -13,7 +13,7 @@ export default class VisibilityEvent extends React.Component {
     };
   }
 
-  getDefaultProps() {
+  static get defaultProps() {
     return {
       category: 'All'
     };
