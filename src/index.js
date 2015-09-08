@@ -1,7 +1,7 @@
-import Event from './Event';
+import VisibilityEvent from './VisibilityEvent';
 import Page from './Page';
 
 export default {
-  Event,
+  VisibilityEvent,
   Page
 }
