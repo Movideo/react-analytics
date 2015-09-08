@@ -1,0 +1,30 @@
+{
+  "name": "react-analytics",
+  "version": "0.1.0",
+  "description": "Analytics components for React",
+  "files": [
+    "lib"
+  ],
+  "scripts": {
+    "clean": "rm -Rf lib",
+    "compile": "babel ./src -d lib --ignore '__tests__'",
+    "just-test": "mocha --compilers js:babel/register",
+    "test": "npm run compile && npm run just-test",
+    "prepublish": "npm run clean && npm run compile"
+  },
+  "keywords": [
+    "react",
+    "analytics",
+    "events",
+    "tracking"
+  ],
+  "author": "patrick@burntcaramel.com",
+  "license": "MIT",
+  "dependencies": {
+  },
+  "devDependencies": {
+    "babel": "^5.8.21",
+    "chai": "^3.2.0",
+    "mocha": "^2.2.5"
+  }
+}
