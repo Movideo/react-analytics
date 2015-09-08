@@ -1,4 +1,9 @@
 export default class Combiner {
+  /**
+   * Create a service that forwards to multiple other services
+   *
+   * @param  {Array} services An array of the other services you would like to wrap
+   */
   constructor(services) {
     this.services = services;
   }
