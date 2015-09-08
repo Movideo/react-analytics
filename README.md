@@ -1,8 +1,6 @@
-# Analytics
-React components to allow easy usage of Google Analytics.
-
-## What is Analytics?
-
+# React Analytics
+React components to allow easy usage of Google Analytics, Segment.IO, and other
+analytics libraries.
 
 ## Installation
 
