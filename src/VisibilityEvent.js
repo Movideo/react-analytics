@@ -6,7 +6,16 @@ export default class VisibilityEvent extends React.Component {
     return {
       show: PropTypes.string.isRequired,
       hide: PropTypes.string,
+      category: PropTypes.string,
+      label: PropTypes.string,
+      value: PropTypes.number,
       properties: PropTypes.object
+    };
+  }
+
+  getDefaultProps() {
+    return {
+      category: 'All'
     };
   }
 
@@ -18,15 +27,22 @@ export default class VisibilityEvent extends React.Component {
     };
   }
 
+  getEventProperties() {
+    const { category, label, value, properties } = this.props;
+    return Object.assign({}, {
+      category, label, value
+    }, properties);
+  }
+
   componentDidMount() {
-    const { show, properties } = this.props;
-    this.context.analytics.trackEvent(show, properties);
+    const { show } = this.props;
+    this.context.analytics.trackEvent(show, this.getEventProperties());
   }
 
   componentWillUnmount() {
-    const { hide, properties } = this.props;
+    const { hide } = this.props;
     if (hide) {
-      this.context.analytics.trackEvent(hide, properties);
+      this.context.analytics.trackEvent(hide, this.getEventProperties());
     }
   }
 

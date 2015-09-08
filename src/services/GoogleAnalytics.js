@@ -41,7 +41,7 @@ export default class GoogleAnalytics {
    * @param  {Object} properties Extra info to send along
    */
   trackEvent(id, properties = {}) {
-    window.ga('send', 'event', properties.category || 'All', id);
+    window.ga('send', 'event', properties.category || 'All', id, properties.label, properties.value);
   }
 
   /**
