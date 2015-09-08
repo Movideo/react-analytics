@@ -12,7 +12,8 @@ $ npm install @movideo/react-analytics
 
 ### Page
 
-Add to a page component, such as one that you pass to a router.
+Add `<Analytics.Page>` to a page component, such as one that you pass to a
+router.
 
 ```javascript
 import Analytics from 'react-analytics';
@@ -54,7 +55,7 @@ class MyTransientComponent extends React.Component {
 }
 ```
 
-### Services
+### Attach Services to Context
 
 ```javascript
 import Analytics from 'react-analytics';
